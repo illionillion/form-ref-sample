@@ -8,6 +8,7 @@ export const FormInput:FC<FormInputProps> = ({index, valuesRef}) => {
     const [value, setValue] = useState<string>('')
     const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
+        // 変更された値をrefにも反映
         valuesRef.current[index] = e.currentTarget.value
     }
     console.log('rendering1', index);
@@ -27,6 +28,7 @@ interface FormInput2Props {
 export const FormInput2:FC<FormInput2Props> = ({value, values, index, setValues}) => {
     const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
         const newValues:string[] = [...values]
+        // ステートを更新
         newValues[index] = e.currentTarget.value
         setValues(newValues)
     }

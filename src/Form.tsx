@@ -2,6 +2,7 @@ import { FC, FormEvent, useRef, useState } from "react";
 import { FormInput, FormInput2 } from "./FormInput";
 
 export const Form:FC = () => {
+    // useRefで入力値の配列を管理
     const values = useRef<string[]>(['', '', ''])
     const onSubmit = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -21,6 +22,7 @@ export const Form:FC = () => {
 }
 
 export const Form2:FC = () => {
+    // useStateで入力値の配列を管理
     const [values, setValues] = useState<string[]>(['', '', ''])
     const onSubmit = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault()
